@@ -23,6 +23,13 @@ namespace App
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public List<Account> accounts { get; set; } = new List<Account>()
+        { 
+            new Account(){ Name = "My main account 2", Balance = 1_000_000 },
+            new Account(){ Name = "My other account", Balance = 1_000_000_000 },
+            new Account(){ Name = "My savings account", Balance = 999_999_999 }
+        };
+
         public Account Account { get; set; } = new Account() { Name = "My main account", Balance = 1_000_000_000 };
 
         public MainWindow()

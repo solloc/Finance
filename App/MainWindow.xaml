@@ -8,8 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="{x:Bind Account.Name}"/>
-        <TextBlock Text="{x:Bind Account.Balance}"/>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" Margin="8">
+            <TextBlock Text="{x:Bind Account.Name}"/>
+            <TextBlock Text="{x:Bind Account.Balance}"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="8">
+            <TextBlock Text="Account List"/>
+            <TextBlock Text="This will contain my account list"/>
+        </StackPanel>
     </StackPanel>
 </Window>
