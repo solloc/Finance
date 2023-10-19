@@ -10,12 +10,27 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Orientation="Vertical" Margin="8">
-            <TextBlock Text="{x:Bind Account.Name}"/>
+            <TextBlock Text="{x:Bind Account.Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
             <TextBlock Text="{x:Bind Account.Balance}"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="8">
-            <TextBlock Text="Account List"/>
-            <TextBlock Text="This will contain my account list"/>
+        <StackPanel Orientation="Vertical" Margin="8" Width="Auto">
+            <TextBlock Text="Account List:" Style="{ThemeResource TitleTextBlockStyle}"/>
+            <ListView x:Name="AccountsListView" ItemsSource="{x:Bind Accounts}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Account">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <FontIcon Grid.Column="0" Glyph="&#xF540;" />
+                            <TextBlock Grid.Column="1" Text="{x:Bind Name}" Margin="8,0,8,0"/>
+                            <TextBlock Grid.Column="2" Text="{x:Bind Balance}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </StackPanel>
 </Window>
